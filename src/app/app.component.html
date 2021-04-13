@@ -1,0 +1,61 @@
+<body>
+  <h1>Weather App</h1>
+
+  <form
+    [formGroup]="searchForm"
+    (ngSubmit)="collectReport()"
+    (keydown.enter)="$event.preventDefault()"
+  >
+    <div class="form-group">
+      <label>City &nbsp; &nbsp;</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="city"
+        placeholder="Enter city"
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label>State/Province &nbsp; &nbsp;</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="state"
+        placeholder="Enter state/province"
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label>Country &nbsp; &nbsp;</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="country"
+        placeholder="Enter country"
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label>Continent &nbsp; &nbsp;</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="continent"
+        placeholder="Enter continent"
+      />
+    </div>
+    <br />
+    <div id="warning"></div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+  <br />
+  <button (click)="clearAll()">Clear</button>
+
+  <!-- output section -->
+  <div id="outputSection"></div>
+</body>
+
+<router-outlet></router-outlet>
+
+<!-- <h1>test</h1> -->
